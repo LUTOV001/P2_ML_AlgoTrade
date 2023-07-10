@@ -19,52 +19,54 @@ Indicators used for Signal Generation: ATR, DEMA, EFI, EMA, EMV, Force Index, RS
 Developing an ML solution requires a systematic approach to maximize the chances of success while proceeding efficiently. It is also important to make the process transparent and replicable to facilitate collaboration, maintenance, and subsequent refinements.
 
 The process is iterative throughout but these steps were followed:
-1. Frame the problem, identify a target metric, and define success
-1. Source, clean, and validate the data
-1. Understand the data and generate informative features
-1. Selected multiple machine learning algorithms suitable for the data
-1. Train, test, and tune the models
-1. Leverage the model to solve the original problem
+1. Data Collection 
+1. Data Preprocessing
+1. Feature Engineering
+1. Label Generation
+1. Model Selection
+1. Model Training
+1. Model Evaluation
+1. Model Deployment
+
 
 ## Modeling
 The following process has been followed to test and select the most suitable Models using the SPY and QQQ:
 
 1. Data Loading
-Prepared Train/Test datasets were loaded from saved files. Please see the Data Preparation README for details on the preparation of the datasets.
+      Prepared Train/Test datasets were loaded from saved files. Please see the Data Preparation README for details on the preparation of the datasets.
 
 2. Model Training
-   2a. Sci-Kit Learn Modeling
-    An initial set of Machine Learning models were built using six different packages from the Scikit-Learn library:
-    - AdaBoost Classifier
-    - Bagging Classifier
-    - Decision Tree Classifier
-    - Logistic Regression
-    - Long Short-Term Memory (LTSM) Neural Network
-    - Random Forest Classifier
-    - SVM Classifier
-
-    As the initial step in the building of all models a StandardScaler was instantiated.
-    There were 10-plus models built using different parameters. 
-    F1-score and AUC-ROC score were calculated to determine the predictive power of the model
+   Sci-Kit Learn Modeling
+   An initial set of Machine Learning models were built using six different packages from the Scikit-Learn library:
+      - AdaBoost Classifier [AbC-3Y-7030](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/AbC-3Y-7030.ipynb)
+      - Bagging Classifier
+      - Decision Tree Classifier
+      - Logistic Regression
+      - Long Short-Term Memory (LTSM) Neural Network
+      - Random Forest Classifier
+      - SVM Classifier
+      
+      As the initial step in the building of all models a StandardScaler was instantiated.
+      There were 10-plus models built using different parameters. 
+      F1-score and AUC-ROC score were calculated to determine the predictive power of the model.
+       
+   - TensorFlow Modeling
+       - A Deep Neural Network consisting of two Dense layers was designed with the intent of predicting portfolio performance. The following steps were involved in the training of the neural network. 
     
-    2b. TensorFlow Modeling
-    A Deep Neural Network consisting of two Dense layers was designed with the intent of predicting portfolio performance. The following steps were involved in the training of the neural network. The steps were repeated twice, once for the full features dataset and once for the reduced features dataset:
+       - A loop was used to perform the following steps atleast once per portfolio:
+          - StandardScaler() defined and fit to training data
+          - Training data transformed by scaler
+          - Test data transformed by scaler
+          - Keras-Tuner Hypberband tuner was used to find the optimal combination of the following parameters:
+             - Number of nodes for Dense layer 1
+             - Number of nodes for Dense layer 2
+             - Activation function for hidden layer 1
+             - Activation function for hidden layer 2
+             - Learning rate for the optimizer
+           - The model with the 'best' performance from all the model configurations was chosen
     
-    A loop was used to perform the following steps once per portfolio:
-    -StandardScaler() defined and fit to training data
-    -Training data transformed by scaler
-    -Test data transformed by scaler
-    -Keras-Tuner Hypberband tuner was used to find the optimal combination of the following parameters:
-    
-    Number of nodes for Dense layer 1
-    Number of nodes for Dense layer 2
-    Activation function for hidden layer 1
-    Activation function for hidden layer 2
-    learning rate for the optimizer
-    The model with the 'best' performance from all the model configurations was chosen
-    
-    3. Model Performance/Selection
-    Models were evaluated using an ROC-AUC score and F1 score, with the F1 score being the primary metric.
+3. Model Performance/Selection
+    Models were evaluated using an ROC-AUC score and F1 score, with the accuracy score and plotting of returns being the primary metrics.
 
 ## Technologies
 Details on asset performance are retrieved using the Yahoo Finance API.
@@ -78,10 +80,13 @@ The contents of the repository should be placed into the desired folder on the u
 The following python packages must be installed to run the application locally:
 - pandas
 - matplotlib
+- talib
+- finta
 - yahoo_fin
 - numpy
 - hvplot
 - jupyterlab (only if the .ipynb file is used. running the .py file does not require jupyterlab)
+
 These packages may be individually installed into the environment of your choice or you may create a new conda environment using the included environment.yml file.
 
 ```conda env create -f environment.yml```
@@ -91,18 +96,17 @@ If you prefer using pip, the included requirements.txt file may be used to insta
 ```pip install -r requirements.txt```
 
 ## Contributors
-- Malika Ajmera
-- Matthew Glasgow
+- [Malika Ajmera](https://github.com/malika0410)
+- [Matthew Glasgow](https://github.com/Slay1007)
 - Joseph Knight
-- Mike Nguyen
-- Michelle Silver
-- Luis Torres
+- [Mike Nguyen]
+- [Michelle Silver](https://github.com/supersilver1978)
+- [Luis Torres](https://github.com/LUTOV001)
 
 ## License
 License information can be found in the included LICENSE file.
 
 ## Resources / Credits
-Risk Analysis Survey was compiled based upon a survey provided by Lincoln Financial Group
 Code for generating the Machine Learning Models was modified from code provided by UC Berkeley Extension FinTech Bootcamp
 Research on trading factors and machine learning was modified from code for [Machine Learning for Algorithmic Trading, 2nd edition](https://www.amazon.com/Machine-Learning-Algorithmic-Trading-alternative/dp/1839217715?pf_rd_r=GZH2XZ35GB3BET09PCCA&pf_rd_p=c5b6893a-24f2-4a59-9d4b-aff5065c90ec&pd_rd_r=91a679c7-f069-4a6e-bdbb-a2b3f548f0c8&pd_rd_w=2B0Q0&pd_rd_wg=GMY5S&ref_=pd_gw_ci_mcx_mr_hp_d) by Stefan Jansen 
 Analysis of Financial Time Series, 3rd Edition, Ruey S. Tsay
