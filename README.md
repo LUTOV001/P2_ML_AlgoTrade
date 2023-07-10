@@ -99,7 +99,7 @@ If you prefer using pip, the included requirements.txt file may be used to insta
 - [Malika Ajmera](https://github.com/malika0410)
 - [Matthew Glasgow](https://github.com/Slay1007)
 - Joseph Knight
-- [Mike Nguyen]
+- [Mike Nguyen](https://github.com/mikenguyenx)
 - [Michelle Silver](https://github.com/supersilver1978)
 - [Luis Torres](https://github.com/LUTOV001)
 
