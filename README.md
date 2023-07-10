@@ -38,10 +38,10 @@ The following process has been followed to test and select the most suitable Mod
 2. Model Training
    Sci-Kit Learn Modeling
    An initial set of Machine Learning models were built using six different packages from the Scikit-Learn library:
-      - AdaBoost Classifier [AbC-3Y-7030](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/AbC-3Y-7030.ipynb)
+      - AdaBoost Classifier [(AbC-3Y-7030)](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/AbC-3Y-7030.ipynb)
       - Bagging Classifier
       - Decision Tree Classifier
-      - Logistic Regression [LogReg-3Y7030](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/LogReg-3Y7030.ipynb)
+      - Logistic Regression [(LogReg-3Y7030)](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/LogReg-3Y7030.ipynb)
       - Long Short-Term Memory (LTSM) Neural Network
       - Random Forest Classifier
       - SVM Classifier
