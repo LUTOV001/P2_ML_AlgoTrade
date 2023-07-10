@@ -38,13 +38,12 @@ The following process has been followed to test and select the most suitable Mod
 2. Model Training
    Sci-Kit Learn Modeling
    An initial set of Machine Learning models were built using six different packages from the Scikit-Learn library:
-      - AdaBoost Classifier [(AbC-3Y-7030)](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/AbC-3Y-7030.ipynb)
-      - Bagging Classifier
-      - Decision Tree Classifier
-      - Logistic Regression [(LogReg-3Y7030)](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/LogReg-3Y7030.ipynb)
-      - Long Short-Term Memory (LTSM) Neural Network
-      - Random Forest Classifier
-      - SVM Classifier
+      - AdaBoost Classifier [AbC-3Y-7030](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/AbC-3Y-7030.ipynb)
+      - Decision Tree Classifier [index_info_updated_MS](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/5_michellesilver/index_info_updated_MS.ipynb)
+      - Logistic Regression [LogReg-3Y7030](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/LogReg-3Y7030.ipynb)
+      - Long Short-Term Memory (LTSM) Neural Network [timeseries using lstm](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/1_malikaajmera/timeseries%20using%20lstm.ipynb)
+      - Random Forest Classifier [RSI_FINAL](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/1_malikaajmera/RSI_FINAL.ipynb)
+      - SVM Classifier [spyp2ml](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/2_mattglasgow/spyp2ml.ipynb)
       
       As the initial step in the building of all models a StandardScaler was instantiated.
       There were 10-plus models built using different parameters. 
@@ -67,6 +66,10 @@ The following process has been followed to test and select the most suitable Mod
     
 3. Model Performance/Selection
     Models were evaluated using an ROC-AUC score and F1 score, with the accuracy score and plotting of returns being the primary metrics.
+      Foundational Models
+      - Long Short-Term Memory (LTSM) Neural Network [timeseries using lstm](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/1_malikaajmera/timeseries%20using%20lstm.ipynb)
+      - Decision Tree Classifier [index_info_updated_MS](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/5_michellesilver/index_info_updated_MS.ipynb)
+
 
 ## Technologies
 Details on asset performance are retrieved using the Yahoo Finance API.
