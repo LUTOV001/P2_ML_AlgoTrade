@@ -41,7 +41,7 @@ The following process has been followed to test and select the most suitable Mod
       - AdaBoost Classifier [AbC-3Y-7030](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/AbC-3Y-7030.ipynb)
       - Bagging Classifier
       - Decision Tree Classifier
-      - Logistic Regression
+      - Logistic Regression [LogReg-3Y7030](https://github.com/LUTOV001/P2_ML_AlgoTrade/blob/main/6_luistorres/LogReg-3Y7030.ipynb)
       - Long Short-Term Memory (LTSM) Neural Network
       - Random Forest Classifier
       - SVM Classifier
