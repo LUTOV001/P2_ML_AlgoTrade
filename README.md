@@ -57,12 +57,7 @@ The following process has been followed to test and select the most suitable Mod
           - Training data transformed by scaler
           - Test data transformed by scaler
           - Keras-Tuner Hypberband tuner was used to find the optimal combination of the following parameters:
-             - Number of nodes for Dense layer 1
-             - Number of nodes for Dense layer 2
-             - Activation function for hidden layer 1
-             - Activation function for hidden layer 2
-             - Learning rate for the optimizer
-           - The model with the 'best' performance from all the model configurations was chosen
+          - The model with the 'best' performance from all the model configurations was chosen
     
 3. Model Performance/Selection
     Models were evaluated using an ROC-AUC score and F1 score, with the accuracy score and plotting of returns being the primary metrics.
@@ -80,7 +75,7 @@ The Pandas and Numpy libraries are used to work with the asset data retrieved fr
 ## Installation Guide
 The contents of the repository should be placed into the desired folder on the users computer, being sure to maintain the directory structure.
 
-The following python packages must be installed to run the application locally:
+The following python packages must be installed to run the models locally:
 - pandas
 - matplotlib
 - talib
